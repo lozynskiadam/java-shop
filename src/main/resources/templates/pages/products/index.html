@@ -15,20 +15,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Dumle</td>
-            <td>Fazer</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Michałki</td>
-            <td>Wawel</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Zozole</td>
-            <td>Nim2</td>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.brand}"></td>
         </tr>
         </tbody>
     </table>
