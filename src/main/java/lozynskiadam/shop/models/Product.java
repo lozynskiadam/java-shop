@@ -1,6 +1,9 @@
 package lozynskiadam.shop.models;
 
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "products")
@@ -10,8 +13,12 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull(message = "Name is mandatory")
+    @Size(min = 2, max = 45)
     private String name;
 
+    @NotNull(message = "Name is mandatory")
+    @Size(min = 2, max = 45)
     private String brand;
 
     public int getId() {

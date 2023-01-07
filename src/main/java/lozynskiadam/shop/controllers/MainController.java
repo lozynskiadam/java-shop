@@ -9,6 +9,8 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model) {
+        model.addAttribute("context", "home");
+
         return "pages/dashboard/index";
     }
 
