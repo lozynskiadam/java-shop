@@ -7,7 +7,7 @@
         <h1 class="h2">Add product</h1>
     </div>
 
-    <form th:action="@{/products/create}" th:object="${product}" method="post">
+    <form th:object="${product}" method="post">
 
         <em th:replace="~{components/input :: input(
             name='name',
