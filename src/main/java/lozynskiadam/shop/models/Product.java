@@ -13,11 +13,11 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull(message = "Name is mandatory")
+    @NotNull
     @Size(min = 2, max = 45)
     private String name;
 
-    @NotNull(message = "Name is mandatory")
+    @NotNull
     @Size(min = 2, max = 45)
     private String brand;
 
