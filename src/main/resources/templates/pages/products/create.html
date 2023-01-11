@@ -9,25 +9,16 @@
 
     <form th:action="@{/products/create}" th:object="${product}" method="post">
 
-        <div class="mb-3 row">
-            <label class="col-form-label col-sm-2 text-sm-end" for="form-name">Nazwa</label>
-            <div class="col-sm-3">
-                <input type="text" id="form-name" class="form-control" th:field="*{name}"
-                       th:classappend="${#fields.hasErrors('${product.name}') ? 'is-invalid' : null}">
-                <div class="invalid-feedback" th:errors="*{name}"></div>
-            </div>
-            <small class="col-sm-7 text-muted">Proszę wpisać nazwę produktu</small>
-        </div>
+        <em th:replace="~{components/input :: input(
+            name='name',
+            label='Nazwa',
+            hint='Proszę wpisać nazwę produktu'
+        )}"></em>
 
-        <div class="mb-3 row">
-            <label class="col-form-label col-sm-2 text-sm-end" for="form-brand">Firma</label>
-            <div class="col-sm-3">
-                <input type="text" id="form-brand" class="form-control" th:field="*{brand}"
-                       th:classappend="${#fields.hasErrors('${product.brand}') ? 'is-invalid' : null}">
-                <div class="invalid-feedback" th:errors="*{brand}"></div>
-            </div>
-            <small class="col-sm-7 text-muted">Proszę wpisać nazwę firmy</small>
-        </div>
+        <em th:replace="~{components/input :: input(
+            name='brand',
+            label='Firma'
+        )}"></em>
 
         <div class="mb-3 row">
             <div class="offset-sm-2 col-sm-10">
