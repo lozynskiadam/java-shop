@@ -1,4 +1,4 @@
-package lozynskiadam.shop;
+package lozynskiadam.shop.config;
 
 import lozynskiadam.shop.models.User;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,11 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
-public class CustomUserDetails implements UserDetails {
+public class ShopUserDetails implements UserDetails {
 
     private User user;
 
-    public CustomUserDetails(User user) {
+    public ShopUserDetails(User user) {
         super();
         this.user = user;
     }

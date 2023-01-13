@@ -1,4 +1,4 @@
-package lozynskiadam.shop;
+package lozynskiadam.shop.config;
 
 import lozynskiadam.shop.models.User;
 import lozynskiadam.shop.repositories.UserRepository;
@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class ShopUserDetailsService implements UserDetailsService {
 
     @Autowired
     public UserRepository userRepository;
@@ -21,6 +21,6 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
 
-        return new CustomUserDetails(user);
+        return new ShopUserDetails(user);
     }
 }
