@@ -13,6 +13,7 @@
             <th>Id</th>
             <th>Nazwa</th>
             <th>Firma</th>
+            <th>Akcje</th>
         </tr>
         </thead>
         <tbody>
@@ -20,6 +21,16 @@
             <td th:text="${product.id}"></td>
             <td th:text="${product.name}"></td>
             <td th:text="${product.brand}"></td>
+            <td>
+                <a th:href="@{'/products/' + ${product.id} + '/edit'}" class="btn btn-primary btn-sm">
+                    <i data-feather="edit"></i> Edytuj
+                </a>
+                <form th:action="@{'/products/' + ${product.id} + '/delete'}" method="post" class="d-inline">
+                    <button class="btn btn-danger btn-sm">
+                        <i data-feather="trash"></i> Usuń
+                    </button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>

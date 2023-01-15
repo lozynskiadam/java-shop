@@ -9,13 +9,13 @@
 
     <form th:object="${product}" method="post">
 
-        <em th:replace="~{components/input :: input(
+        <em th:replace="~{macros :: input(
             name='name',
             label='Nazwa',
             hint='Proszę wpisać nazwę produktu'
         )}"></em>
 
-        <em th:replace="~{components/input :: input(
+        <em th:replace="~{macros :: input(
             name='brand',
             label='Firma'
         )}"></em>
